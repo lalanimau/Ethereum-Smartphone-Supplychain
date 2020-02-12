@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Smartphone-SupplyChain</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <main class="app">
+    <h1>Smartphone Supplychain Management</h1>
+    <section class="container">
+      <section class="roles">
+        <nav>
+          <ul id="roles">
+            <li name="manufacturer" class="active">Manufacturer</li>
+            <li name="smartphone_company">Smartphone Company</li>
+            <li name="retailer">Retailer</li>
+            <li name="consumer">Consumer</li>
+          </ul>
+        </nav>
+        <section class="active-role" id="activeRole">
+          <article name="manufacturer" class="active">
+            <form name="add-remove-manufacturer">
+              <label>Add/Remove Manufacturer</label>
+              <br>
+              <input type="text" name="address" placeholder="Address" />
+              <select name="addOrRemove">
+                <option value="add">Add</option>
+                <option value="remove">Remove</option>
+              </select>
+              <button class="add-remove-button" type="button">Sumbit</button>
+            </form>
+
+            <form name="manufactureComponents">
+              <label>Manufacture Smartphone Components</label>
+              <br>
+              <input type="number" name="upc" placeholder="UPC" />
+              <input type="text" name="notes" placeholder="Description" />
+              <input type="number" name="price" placeholder="Desired profit in ether" />
+              <button type="button" name="submit">Sumbit</button>
+            </form>
+          </article>
+          <article name="smartphone_company">
+            <form name="add-remove-smartphone_company">
+              <label>Add/Remove Smartphone Company</label>
+              <br>
+              <input type="text" name="address" placeholder="Address" />
+              <select name="addOrRemove">
+                <option value="add">Add</option>
+                <option value="remove">Remove</option>
+              </select>
+              <button class="add-remove-button" type="button">Sumbit</button>
+            </form>
+            <form name="assembleSmartphone">
+              <label>Assemble Smartphone</label>
+              <br>
+              <input type="number" name="upc" placeholder="UPC" />
+              <input type="number" name="price" placeholder="Desired profit in ether" />
+              <button type="button" name="submit">Sumbit</button>
+            </form>
+          </article>
+          <article name="retailer">
+            <form name="add-remove-retailer">
+              <label>Add/Remove Retailer</label>
+              <br>
+              <input type="text" name="address" placeholder="Address" />
+              <select name="addOrRemove">
+                <option value="add">Add</option>
+                <option value="remove">Remove</option>
+              </select>
+              <button class="add-remove-button" type="button">Sumbit</button>
+            </form>
+            <form name="buySmartphoneFromCompany">
+              <label>Buy Smartphone</label>
+              <br>
+              <input type="number" name="upc" placeholder="UPC" />
+              <button type="button" name="submit">Buy</button>
+            </form>
+            <form name="markReceivedByRetailer">
+              <label>Mark Received</label>
+              <br>
+              <input type="number" name="upc" placeholder="UPC" />
+              <button type="button" name="submit">Mark Received</button>
+            </form>
+            <form name="putForSale">
+              <label>Put Smartphone For Sale</label>
+              <br>
+              <input type="number" name="upc" placeholder="UPC" />
+              <input type="number" name="price" placeholder="Desired profit in ether" />
+              <button type="button" name="submit">Put For Sale</button>
+            </form>
+          </article>
+          <article name="consumer">
+            <h1 style="font-size:22px">Smartphones on sale!</h1>
+            <article id="smartphones-on-sale"></article>
+          </article>
+        </section>
+
+      </section>
+      <aside>
+        <section class="product-info">
+          <h1>View Product Details</h1>
+          <form name="viewProductDetails">
+            <input name="upc" type="number" placeholder="Enter UPC" />
+            <button name="submit" type="button">Fetch</button>
+            
+          </form>
+          <output id="product-details">
+
+            </output>
+        </section>
+        <section class="validate-product">
+          <h1>Validate/Trace Product</h1>
+          <form name="traceProduct">
+            <input type="number" name="upc" placeholder="Enter UPC" />
+            <button name="submit" type="button">Trace</button>
+            
+          </form>
+          <output id="product-traces">
+            </output>
+        </section>
+    </section>
+    </aside>
+    <article class="status-output">
+      <h1>Output: </h1>
+      <output id="status">None</output>
+    </article>
+    <script src="./app.js"></script>
+  </main>
+</body>
+
+</html>
